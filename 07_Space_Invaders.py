@@ -278,5 +278,3 @@ while game_running:
     game_input()
     game_update()
     game_output()
-
-   
