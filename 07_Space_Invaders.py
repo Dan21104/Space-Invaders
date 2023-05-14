@@ -71,21 +71,22 @@ hp_Surface = font_obj.render(str(space_ship_hp), True, (136, 8, 8), None)
 hp_Rect = score_Surface.get_rect()
 hp_Rect.center = (750, 30)
 
-dmg_Surface = font_obj.render(str(ally_shot_dmg), True, (0, 0, 128), None)
+dmg_Surface = font_obj.render("Ally damage: " + str(ally_shot_dmg), True, (0, 0, 128), None)
 dmg_Rect = score_Surface.get_rect()
-dmg_Rect.center = (700, 30)
+dmg_Rect.center = (610, 30)
 
 enemy_hp_Surface = font_obj.render(str(enemy_hp), True, (136, 8, 8), None)
 enemy_hp_Rect = score_Surface.get_rect()
 enemy_hp_Rect.center = (100, 30)
 
-enemy_dmg_Surface = font_obj.render(str(enemy_dmg), True, (0, 0, 128), None)
+enemy_dmg_Surface = font_obj.render("Enemy damage: " + str(enemy_dmg), True, (0, 0, 128), None)
 enemy_dmg_Rect = score_Surface.get_rect()
 enemy_dmg_Rect.center = (50, 30)
 
 bullets = []
 enemies = []
 upgrades = []
+dangers = []
 
 
 def on_key_down(event):
@@ -181,16 +182,16 @@ def game_update():
     score_Surface = font_obj.render(str(score // score_a), True, (97, 222, 42), None)
     score_Rect = score_Surface.get_rect()
     score_Rect.center = (400, 30)
-    hp_Surface = font_obj.render(str(space_ship_hp), True, (136, 8, 8), None)
+    hp_Surface = font_obj.render("Ally hp: " + str(space_ship_hp), True, (136, 8, 8), None)
     hp_Rect = score_Surface.get_rect()
-    hp_Rect.center = (750, 30)
-    dmg_Surface = font_obj.render(str(ally_shot_dmg), True, (0, 0, 128), None)
+    hp_Rect.center = (610, 60)
+    dmg_Surface = font_obj.render("Ally damage: " + str(ally_shot_dmg), True, (0, 0, 128), None)
     dmg_Rect = score_Surface.get_rect()
-    dmg_Rect.center = (700, 30)
-    enemy_hp_Surface = font_obj.render(str(enemy_hp), True, (136, 8, 8), None)
+    dmg_Rect.center = (610, 30)
+    enemy_hp_Surface = font_obj.render("Enemy hp: " + str(enemy_hp), True, (136, 8, 8), None)
     enemy_hp_Rect = score_Surface.get_rect()
-    enemy_hp_Rect.center = (100, 30)
-    enemy_dmg_Surface = font_obj.render(str(enemy_dmg), True, (0, 0, 128), None)
+    enemy_hp_Rect.center = (50, 60)
+    enemy_dmg_Surface = font_obj.render("Enemy damage: " + str(enemy_dmg), True, (0, 0, 128), None)
     enemy_dmg_Rect = score_Surface.get_rect()
     enemy_dmg_Rect.center = (50, 30)
     if ally_upgrade == 1:
@@ -277,3 +278,5 @@ while game_running:
     game_input()
     game_update()
     game_output()
+
+   
